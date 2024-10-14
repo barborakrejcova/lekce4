@@ -1,16 +1,25 @@
- //Cviceni 3 - Registrace na ockovani
+//Cviceni 3 - Dorucovani
 
-  const jmeno = prompt("Zadejte jméno", "Jméno");
-  const prijmeni = prompt("Zadejte příjmení", "Příjmení");
-  const vek = Number(prompt("Zadejte vek", 20));
-  const heslo = prompt("Zadejte heslo", "heslo");
+/*
+Vytvořte webovou stránku, kde uživatel zadá svoji adresu například pro účely doručení objednaného zboží. Požaduje ulici, číslo domu, město a PSČ.
 
-  if (vek >= 65) {
-    document.body.innerHTML = "<p>Věk v pořádku</p>";
-    if (heslo.length <= 8) {
-      document.body.innerHTML += "<p>Slabé heslo</p>";
-    }
+Uložte všechny údaje do vhodně pojmenovaných proměnných.
+Ze zadanách údajů sestavte pomocí interpolace řetězeců obsahující HTML ve formátu jako níže
+<address>
+  <p>Pod Stájemi 67</p>
+  <p>12754 Klysnov</p>
+</address>
+Pomocí document.body.innerHTML vložte sestavené HTML do stránky.
+*/
 
-  } else {
-    document.body.innerHTML = "<p>Nízký věk</p>";
-  }
+const ulice = prompt("Zadejte ulici");
+const cisloDomu = prompt("Zadejte číslo domu");
+const mesto = prompt("Zadejte město");
+const psc = prompt("Zadejte PSČ");
+
+document.body.innerHTML =
+`<address>
+ <p>${ulice} ${cisloDomu}</p>
+ <p>${psc} ${mesto}</p>
+</address>
+`

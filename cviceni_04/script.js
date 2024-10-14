@@ -1,17 +1,16 @@
-  //Cviceni 4 - Cena vstupenky
+ //Cviceni 3 - Registrace na ockovani
 
-  const vek = Number(prompt("Zadejte věk"));
-  const plnaCena = 12;
-  
-  let cena;
-  if (vek < 6) {
-    cena = 0;
-  } else if (vek >= 6 && vek <= 26) {
-    cena = Math.round(plnaCena * 0.65);
-  } else if (vek >= 27 && vek <= 64) {
-    cena = plnaCena;
+  const jmeno = prompt("Zadejte jméno", "Jméno");
+  const prijmeni = prompt("Zadejte příjmení", "Příjmení");
+  const vek = Number(prompt("Zadejte vek", 20));
+  const heslo = prompt("Zadejte heslo", "heslo");
+
+  if (vek >= 65) {
+    document.body.innerHTML = "<p>Věk v pořádku</p>";
+    if (heslo.length <= 8) {
+      document.body.innerHTML += "<p>Slabé heslo</p>";
+    }
+
   } else {
-    cena = plnaCena * 0.5;
+    document.body.innerHTML = "<p>Nízký věk</p>";
   }
-
-  document.body.innerHTML += "<p>Cena vstupenky: " + cena + "</p>";
